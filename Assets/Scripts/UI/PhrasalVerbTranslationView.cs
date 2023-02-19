@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class PhrasalVerbTextView : MonoBehaviour {
+public class PhrasalVerbTranslationView : MonoBehaviour {
     private void Start() {
         PhrasalVerbsDB phrasalVerbsDB = PhrasalVerbsDB.GetInstanceComponent();
-        GetComponent<Text>().text = phrasalVerbsDB.ChosenPhrasalVerbName;
+        GetComponent<Text>().text = phrasalVerbsDB.ChosenPhrasalVerbTranslation;
     }
 }

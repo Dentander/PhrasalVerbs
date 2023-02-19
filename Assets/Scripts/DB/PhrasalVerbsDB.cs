@@ -9,15 +9,20 @@ public class PhrasalVerbsDB : MonoBehaviour {
     private static GameObject _instance=null;
 
     private GameObject _chosenPhrasalVerbPrefab;
-    private string _chosenphrasalVerbName;
+    private string _chosenPhrasalVerbName;
+    private string _chosenPhrasalVerbTranslation;
 
     public GameObject ChosenPhrasalVerbPrefab {
         get { return _chosenPhrasalVerbPrefab; }
         set { _chosenPhrasalVerbPrefab = value; }
     }
-    public string ChosenphrasalVerbName {
-        get { return _chosenphrasalVerbName; }
-        set { _chosenphrasalVerbName = value; }
+    public string ChosenPhrasalVerbName {
+        get { return _chosenPhrasalVerbName; }
+        set { _chosenPhrasalVerbName = value; }
+    }
+    public string ChosenPhrasalVerbTranslation {
+        get { return _chosenPhrasalVerbTranslation; }
+        set { _chosenPhrasalVerbTranslation = value; }
     }
 
     private void Start() {

@@ -39,6 +39,7 @@ public class PlaneMarker : MonoBehaviour {
         var hitObjects = GetHitObjects();
         if (hitObjects.Count > 0) {
             _planeMarker.transform.position = hitObjects[0].pose.position;
+            _planeMarker.transform.position += new Vector3(0, -0.2f, 0);
         }
     }
 

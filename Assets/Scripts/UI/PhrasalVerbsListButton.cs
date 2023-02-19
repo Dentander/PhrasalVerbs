@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PhrasalVerbsListButton : MonoBehaviour {
     [SerializeField] private GameObject _phrasalVerbPrefab;
     [SerializeField] private string _phrasalVerbName;
+    [SerializeField] private string _phrasalVerbTranslation="Тестовый объект";
     [SerializeField] private Text _buttonText;
 
     public GameObject PhrasalVerbPrefab {
@@ -31,7 +32,8 @@ public class PhrasalVerbsListButton : MonoBehaviour {
     public void ViewPhrasalVerb() {
         var phrasalVerbsDB = PhrasalVerbsDB.GetInstanceComponent();
         phrasalVerbsDB.ChosenPhrasalVerbPrefab = _phrasalVerbPrefab;
-        phrasalVerbsDB.ChosenphrasalVerbName = _phrasalVerbName;
+        phrasalVerbsDB.ChosenPhrasalVerbName = _phrasalVerbName;
+        phrasalVerbsDB.ChosenPhrasalVerbTranslation = _phrasalVerbTranslation;
         AnimatedSceneLoader.StaticLoadScene("PhrasalVerbViewer");
     }
 }
