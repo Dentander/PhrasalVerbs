@@ -28,7 +28,7 @@ public class PlaneMarker : MonoBehaviour {
     }
 
     private List<ARRaycastHit> GetHitObjects() {
-        List<ARRaycastHit> hitObjects = new List<ARRaycastHit>();
+        List<ARRaycastHit> hitObjects = new();
         _ARRaycastManager.Raycast(GetScreenCenter(), hitObjects, TrackableType.Planes);
         return hitObjects;
     }

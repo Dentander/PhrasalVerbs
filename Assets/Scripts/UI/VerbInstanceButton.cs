@@ -1,27 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 
 public class VerbInstanceButton : MonoBehaviour {
-    [SerializeField] private GameObject _phrasalVerb=null;
-    [SerializeField] private Button _button;
-
     private PlaneMarker _planeMarker;
     private GameObject _lastPhaselVerb;
+    private PhrasalVerbsDB _db;
 
     private void Start() {
         _planeMarker = FindObjectOfType<PlaneMarker>();
+        _db = PhrasalVerbsDB.GetInstanceComponent();
     }
 
     private void InstanceVerb() {
-        if (_phrasalVerb == null) {
-            GameObject prasalVerb = PhrasalVerbsDB.GetInstanceComponent().ChosenPhrasalVerbPrefab;
-            _lastPhaselVerb = Instantiate(prasalVerb, _planeMarker.MarkerPosition, prasalVerb.transform.rotation);
-        } else {
-            _lastPhaselVerb = Instantiate(_phrasalVerb, _planeMarker.MarkerPosition, _phrasalVerb.transform.rotation);
-        }
+        _lastPhaselVerb = Instantiate(_db.ChosenPhrasalVerbModel, _planeMarker.MarkerPosition, _db.ChosenPhrasalVerbModel.transform.rotation);
         _planeMarker.MarkerEnabled = false;
     }
 

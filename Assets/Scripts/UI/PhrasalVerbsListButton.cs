@@ -5,35 +5,23 @@ using UnityEngine.UI;
 
 
 public class PhrasalVerbsListButton : MonoBehaviour {
-    [SerializeField] private GameObject _phrasalVerbPrefab;
-    [SerializeField] private string _phrasalVerbName;
-    [SerializeField] private string _phrasalVerbTranslation="Тестовый объект";
     [SerializeField] private Text _buttonText;
 
-    public GameObject PhrasalVerbPrefab {
-        get { return _phrasalVerbPrefab; }
-        set { _phrasalVerbPrefab = value; }
-    }
-    public string PhrasalVerbName {
-        get { return _phrasalVerbName; }
-        set { _phrasalVerbName = value; }
+    private PhrasalVerbInfoItem _phrasalVerb;
+
+    public PhrasalVerbInfoItem PhrasalVerb {
+        get { return _phrasalVerb; }
+        set { _phrasalVerb = value; }
     }
 
     private void Start() {
-        Init(_phrasalVerbPrefab, _phrasalVerbName);
-    }
-
-    public void Init(GameObject _phrasalVerbPrefab, string _phrasalVerbName) {
-        PhrasalVerbPrefab = _phrasalVerbPrefab;
-        PhrasalVerbName = _phrasalVerbName;
-        _buttonText.text = PhrasalVerbName;
+        _buttonText.text = _phrasalVerb.Verb;
     }
 
     public void ViewPhrasalVerb() {
         var phrasalVerbsDB = PhrasalVerbsDB.GetInstanceComponent();
-        phrasalVerbsDB.ChosenPhrasalVerbPrefab = _phrasalVerbPrefab;
-        phrasalVerbsDB.ChosenPhrasalVerbName = _phrasalVerbName;
-        phrasalVerbsDB.ChosenPhrasalVerbTranslation = _phrasalVerbTranslation;
+
+        phrasalVerbsDB.ChosenPhrasalVerbItem = _phrasalVerb;
         AnimatedSceneLoader.StaticLoadScene("PhrasalVerbViewer");
     }
 }

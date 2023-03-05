@@ -11,7 +11,7 @@ public class AnimatedSceneLoader : MonoBehaviour {
     private Animator _animator;
 
     private void Start() {
-        Application.targetFrameRate = 120;
+        Application.targetFrameRate = 300;
         if (_instance == null) {
             DontDestroyOnLoad(gameObject);
             _animator = GetComponent<Animator>();
