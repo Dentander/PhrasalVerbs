@@ -88,7 +88,6 @@ public class PhrasalVerbsDB : MonoBehaviour {
     }
 
     private IEnumerator PrepareDatabase(string databaseName) {
-        try { 
             string path = Application.streamingAssetsPath + "/" + databaseName;
             UnityWebRequest unityWebRequest = UnityWebRequest.Get(path);
             yield return unityWebRequest.SendWebRequest();
@@ -97,7 +96,6 @@ public class PhrasalVerbsDB : MonoBehaviour {
 
             byte[] data = unityWebRequest.downloadHandler.data;
             File.WriteAllBytes(Application.persistentDataPath + "/" + _dbName, data);
-        } finally { }
     }
     private void OpenDatabase() {
         _connection = new SqliteConnection("URI=file:" + GetPath());
