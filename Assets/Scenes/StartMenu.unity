@@ -652,6 +652,14 @@ MonoBehaviour:
   _phrasalVerbModelInterpreterToConvert:
   - path: Give up
     verb: {fileID: 1521144299580314749, guid: 405b5b074dd92844bac6fec625efd817, type: 3}
+  - path: Break down
+    verb: {fileID: 455320911719519912, guid: 512c06c62da03894ea070cb71b331cbe, type: 3}
+  - path: Cut off
+    verb: {fileID: 3990128065157552477, guid: 62a5f0d39b816694fa8fd8540ffc0184, type: 3}
+  - path: Fall apart
+    verb: {fileID: 3809305625437123913, guid: 13f63f86ef7883f43ad6de34621c303b, type: 3}
+  - path: Close in
+    verb: {fileID: 7749830745884739469, guid: f39e88e4e7e98c847b205fc21a5b2c24, type: 3}
 --- !u!4 &1060009514
 Transform:
   m_ObjectHideFlags: 0
